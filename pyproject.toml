@@ -1,0 +1,76 @@
+[project]
+authors = [
+    { name = "Camila Losada", email = "camilosadaa@hotmail.com"}
+]
+maintainers = [
+    {name = "Camila Losada", email = "camilosadaa@hotmail.com"}
+]
+name = "dms_rnn"
+description = "A Python package for computational modeling of working memory and decision-making processes, with a focus on prefrontal cortex function. This package provides tools for simulating and analyzing neural activity patterns, as well as fitting models to experimental data."
+version = "0.1.0"
+license = { file = "LICENSE" }
+readme = {file = "README.md", content-type = "text/markdown"}
+requires-python = ">= 3.10"
+dependencies = [
+    "numpy >=1.23", 
+    "scipy>=1.14",
+    "mne>=1.8",
+    "scikit-learn", 
+    "h5py",
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: BSD License",
+    "Operating System :: Microsoft :: Windows",
+    "Operating System :: POSIX",
+    "Operating System :: Unix",
+    "Operating System :: MacOS",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+]
+
+[project.urls]
+Repository = "https://github.com/camilosada/dms_rnn"
+Documentation = "https://github.com/camilosada/dms_rnn/#README.md"
+Issues = "https://github.com/camilosada/dms_rnn/issues"
+
+[project.optional-dependencies]
+dev = [
+    "ruff>=0.11.0",
+    "black>=24.3.0",
+]
+
+[tool.black]
+line-length = 79
+preview = true
+exclude = '''
+/(
+    \.eggs         # exclude a few common directories in the
+  | \.git          # root of the project
+  | \.mypy_cache
+  | \.vscode
+  | build
+  | dist
+)/
+'''
+
+[tool.ruff]
+line-length = 79
+exclude=[
+    ".git",
+    "__pycache__",
+    "dist",
+    "build",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.metadata]
+allow-direct-references = true
